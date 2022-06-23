@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Turistiando.Model
 {
-    public class RecomendacionModel
+    public class RecoRegionModel
     {
         public string Lugar_Turistico { get; set; }
         public string Departamento { get; set; }
