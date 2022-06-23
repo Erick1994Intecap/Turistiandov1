@@ -18,8 +18,9 @@ namespace Servicios.Servicios
         }
 
         public List<LugaresVisitadosModel> GetLugaresVisitados(IDbConnection dbConnection)
-        => (List<LugaresVisitadosModel>)dbConnection.Query<LugaresVisitadosModel>("SELECT * FROM [RECOMENDACIONES_CERCANAS]");
-
+        {
+            return (List<LugaresVisitadosModel>)dbConnection.Query<LugaresVisitadosModel>("SELECT * FROM [RECOMENDACIONES_CERCANAS]");
+        }
         public List<LugaresVisitadosModel> GetLugaresVisitados()
         {
             throw new NotImplementedException();
