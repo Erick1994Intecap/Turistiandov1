@@ -6,10 +6,19 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Turistiando", "Turistiando\Turistiando.csproj", "{C9D63C62-4B36-42FB-A566-E63F6CE3E49B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicios", "Servicios\Servicios.csproj", "{54581079-BA19-4384-A67D-E6E8F1772EF7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4CBC76BB-7D10-4DBD-969B-66D7BB997D66} = {4CBC76BB-7D10-4DBD-969B-66D7BB997D66}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface", "Interface\Interface.csproj", "{4CBC76BB-7D10-4DBD-969B-66D7BB997D66}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C9D63C62-4B36-42FB-A566-E63F6CE3E49B} = {C9D63C62-4B36-42FB-A566-E63F6CE3E49B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurismoHome", "TurismoHome\TurismoHome.csproj", "{B927FCA4-E638-4036-8A02-CD4364F98A63}"
+	ProjectSection(ProjectDependencies) = postProject
+		{54581079-BA19-4384-A67D-E6E8F1772EF7} = {54581079-BA19-4384-A67D-E6E8F1772EF7}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
