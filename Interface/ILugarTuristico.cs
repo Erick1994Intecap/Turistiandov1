@@ -7,9 +7,9 @@ namespace Interface
 {
     public interface ILugarTuristico
     {
-        LugarTursiticoModel GetLugareVisitado();
-        List<LugarTursiticoModel> GetLugaresVisitados(System.Data.IDbConnection dbConnection);
-        List<LugarTursiticoModel> GetLugaresVisitados();
-        void EditAlumno(LugarTursiticoModel alumno);
+        LugarTursiticoModel GetLugaresTuristico();
+        List<LugarTursiticoModel> GetLugaresTuristicos(System.Data.IDbConnection dbConnection);
+        List<LugarTursiticoModel> GetLugaresTuristicos();
+        void EditLugar(LugarTursiticoModel lugar);
     }
 }

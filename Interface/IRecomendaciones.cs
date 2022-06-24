@@ -7,8 +7,8 @@ namespace Interface
 {
     public interface IRecomendaciones
     {
-        RecomendacionModel GetLugareVisitado();
-        List<RecomendacionModel> GetLugaresVisitados(System.Data.IDbConnection dbConnection);
-        List<RecomendacionModel> GetLugaresVisitados();
+        RecomendacionModel GetLugarRecomendado();
+        List<RecomendacionModel> GetLugaresRecomendados(System.Data.IDbConnection dbConnection);
+        List<RecomendacionModel> GetLugareRecomendados();
     }
 }

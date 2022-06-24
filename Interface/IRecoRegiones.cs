@@ -7,8 +7,8 @@ namespace Interface
 {
     public interface IRecoRegiones
     {
-        RecoRegionModel GetLugareVisitado();
-        List<RecoRegionModel> GetLugaresVisitados(System.Data.IDbConnection dbConnection);
-        List<RecoRegionModel> GetLugaresVisitados();
+        RecoRegionModel GetRecomendacionRegion();
+        List<RecoRegionModel> GetRecomendacionesRegiones(System.Data.IDbConnection dbConnection);
+        List<RecoRegionModel> GetRecomendacionesRegiones();
     }
 }

@@ -39,6 +39,10 @@ namespace TurismoHome
             //this.ApplicationContainer = builder.Build();
 
             services.AddSingleton<ILugaresVisitados, LugaresVisitadosService>();
+            services.AddSingleton<ILugarTuristico, LugarTuristicoService>();
+            services.AddSingleton<IRecoCategoria, RecoCategoriaService>();
+            services.AddSingleton<IRecomendaciones, RecomendacionesService>();
+            services.AddSingleton<IRecoRegiones, RecoRegionesService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

@@ -1,4 +1,5 @@
-﻿using Interface;
+﻿using Dapper;
+using Interface;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,19 +8,26 @@ using Turistiando.Model;
 
 namespace Servicios.Servicios
 {
-    internal class RecomendacionesService : IRecomendaciones
+    public class RecomendacionesService : IRecomendaciones
     {
-        public List<RecomendacionModel> GetLugaresVisitados(IDbConnection dbConnection)
+        private readonly IDbConnection _dbConnection;
+
+        public RecomendacionesService(IDbConnection dbConnection)
+        {
+            _dbConnection = dbConnection;
+        }
+
+        public List<RecomendacionModel> GetLugareRecomendados()
         {
             throw new NotImplementedException();
         }
 
-        public List<RecomendacionModel> GetLugaresVisitados()
+        public List<RecomendacionModel> GetLugaresRecomendados(IDbConnection dbConnection)
         {
-            throw new NotImplementedException();
+            return (List<RecomendacionModel>)dbConnection.Query<RecomendacionModel>("SELECT * FROM [RECOMENDACIONES_CERCANAS]");
         }
 
-        public RecomendacionModel GetLugareVisitado()
+        public RecomendacionModel GetLugarRecomendado()
         {
             throw new NotImplementedException();
         }

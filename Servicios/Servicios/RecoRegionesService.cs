@@ -1,4 +1,5 @@
-﻿using Interface;
+﻿using Dapper;
+using Interface;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,19 +8,26 @@ using Turistiando.Model;
 
 namespace Servicios.Servicios
 {
-    internal class RecoRegionesService : IRecoRegiones
+    public class RecoRegionesService : IRecoRegiones
     {
-        public List<RecoRegionModel> GetLugaresVisitados(IDbConnection dbConnection)
+        private readonly IDbConnection _dbConnection;
+
+        public RecoRegionesService(IDbConnection dbConnection)
+        {
+            _dbConnection = dbConnection;
+        }
+
+        public List<RecoRegionModel> GetRecomendacionesRegiones(IDbConnection dbConnection)
+        {
+            return (List<RecoRegionModel>)dbConnection.Query<RecoRegionModel>("SELECT * FROM [dbo].[FN_REGIONES_CATEGORIA] ('Verapaz')");
+        }
+
+        public List<RecoRegionModel> GetRecomendacionesRegiones()
         {
             throw new NotImplementedException();
         }
 
-        public List<RecoRegionModel> GetLugaresVisitados()
-        {
-            throw new NotImplementedException();
-        }
-
-        public RecoRegionModel GetLugareVisitado()
+        public RecoRegionModel GetRecomendacionRegion()
         {
             throw new NotImplementedException();
         }

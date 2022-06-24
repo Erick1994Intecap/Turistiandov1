@@ -7,8 +7,8 @@ namespace Interface
 {
     public interface IRecoCategoria
     {
-        RecoCategoriaModel GetLugareVisitado();
-        List<RecoCategoriaModel> GetLugaresVisitados(System.Data.IDbConnection dbConnection);
-        List<RecoCategoriaModel> GetLugaresVisitados();
+        RecoCategoriaModel GetLugaresCategoria();
+        List<RecoCategoriaModel> GetLugaresCategoria(System.Data.IDbConnection dbConnection);
+        List<RecoCategoriaModel> GetLugarCategoria();
     }
 }

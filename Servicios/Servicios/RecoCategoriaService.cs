@@ -1,4 +1,5 @@
-﻿using Interface;
+﻿using Dapper;
+using Interface;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,21 +8,28 @@ using Turistiando.Model;
 
 namespace Servicios.Servicios
 {
+
     public class RecoCategoriaService : IRecoCategoria
     {
-        public List<RecoCategoriaModel> GetLugaresVisitados(IDbConnection dbConnection)
+        private readonly IDbConnection _dbConnection;
+        public RecoCategoriaService(IDbConnection dbConnection)
+        {
+            _dbConnection = dbConnection;
+        }
+
+        public List<RecoCategoriaModel> GetLugarCategoria()
         {
             throw new NotImplementedException();
         }
 
-        public List<RecoCategoriaModel> GetLugaresVisitados()
+        public RecoCategoriaModel GetLugaresCategoria()
         {
             throw new NotImplementedException();
         }
 
-        public RecoCategoriaModel GetLugareVisitado()
+        public List<RecoCategoriaModel> GetLugaresCategoria(IDbConnection dbConnection)
         {
-            throw new NotImplementedException();
+            return (List<RecoCategoriaModel>)dbConnection.Query<RecoCategoriaModel>("SELECT * FROM [RECOMENDACIONES_CERCANAS]");
         }
     }
 }
