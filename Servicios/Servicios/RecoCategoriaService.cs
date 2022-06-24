@@ -27,8 +27,9 @@ namespace Servicios.Servicios
             throw new NotImplementedException();
         }
 
-        public List<RecoCategoriaModel> GetLugaresCategoria(IDbConnection dbConnection)
+        public List<RecoCategoriaModel> GetLugaresCategoria(IDbConnection dbConnection, string categoria, string latitud, string longitud)
         {
+            dbConnection.Query<RecomendacionModel>("EXEC SP_GENERA_CERCANOS_CATEGORIA " + latitud + ", " + longitud +", '"+ categoria+"'");
             return (List<RecoCategoriaModel>)dbConnection.Query<RecoCategoriaModel>("SELECT * FROM [RECOMENDACIONES_CERCANAS]");
         }
     }

@@ -20,10 +20,10 @@ namespace TurismoHome.Controllers
             this._dbConnection = dbConnection;
         }
         // GET: api/<RecoCategoriaController>
-        [HttpGet]
-        public List<RecoCategoriaModel> Get()
+        [HttpGet("{categoria}, {latitud}, {longitud}")]
+        public List<RecoCategoriaModel> Get(string categoria, string latitud, string longitud)
         {
-            return _service.GetLugaresCategoria(_dbConnection);
+            return _service.GetLugaresCategoria(_dbConnection, categoria, latitud, longitud);
         }
 
        

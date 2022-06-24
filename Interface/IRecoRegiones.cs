@@ -8,7 +8,7 @@ namespace Interface
     public interface IRecoRegiones
     {
         RecoRegionModel GetRecomendacionRegion();
-        List<RecoRegionModel> GetRecomendacionesRegiones(System.Data.IDbConnection dbConnection);
+        List<RecoRegionModel> GetRecomendacionesRegiones(System.Data.IDbConnection dbConnection, string categoria);
         List<RecoRegionModel> GetRecomendacionesRegiones();
     }
 }

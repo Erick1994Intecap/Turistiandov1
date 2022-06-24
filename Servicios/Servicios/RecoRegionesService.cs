@@ -17,9 +17,9 @@ namespace Servicios.Servicios
             _dbConnection = dbConnection;
         }
 
-        public List<RecoRegionModel> GetRecomendacionesRegiones(IDbConnection dbConnection)
+        public List<RecoRegionModel> GetRecomendacionesRegiones(IDbConnection dbConnection, string categoria)
         {
-            return (List<RecoRegionModel>)dbConnection.Query<RecoRegionModel>("SELECT * FROM [dbo].[FN_REGIONES_CATEGORIA] ('Verapaz')");
+            return (List<RecoRegionModel>)dbConnection.Query<RecoRegionModel>("SELECT * FROM [dbo].[FN_REGIONES_CATEGORIA] ('"+categoria+"')");
         }
 
         public List<RecoRegionModel> GetRecomendacionesRegiones()

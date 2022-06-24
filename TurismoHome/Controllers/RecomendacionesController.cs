@@ -20,19 +20,14 @@ namespace TurismoHome.Controllers
             this._dbConnection = dbConnection;
         }
         // GET: api/<RecomendacionesController>
-        [HttpGet]
-        public List<RecomendacionModel> Get()
+        [HttpGet("{latitud}, {longitud}")]
+        public List<RecomendacionModel> Get(string latitud, string longitud)
         {
-            return _service.GetLugaresRecomendados(_dbConnection);
+            return _service.GetLugaresRecomendados(_dbConnection, latitud, longitud);
         }
 
         // GET api/<RecomendacionesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
+        
         
     }
 }

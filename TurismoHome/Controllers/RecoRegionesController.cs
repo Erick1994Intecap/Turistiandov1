@@ -20,35 +20,12 @@ namespace TurismoHome.Controllers
             this._dbConnection = dbConnection;
         }
         // GET: api/<RecoRegionesController>
-        [HttpGet]
-        public List<RecoRegionModel> Get()
+        [HttpGet("{region}")]
+        public List<RecoRegionModel> Get(string region)
         {
-            return _service.GetRecomendacionesRegiones(_dbConnection);
+            return _service.GetRecomendacionesRegiones(_dbConnection, region);
         }
 
-        // GET api/<RecoRegionesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<RecoRegionesController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<RecoRegionesController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<RecoRegionesController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+       
     }
 }

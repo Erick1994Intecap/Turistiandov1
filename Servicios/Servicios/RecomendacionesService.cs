@@ -22,8 +22,9 @@ namespace Servicios.Servicios
             throw new NotImplementedException();
         }
 
-        public List<RecomendacionModel> GetLugaresRecomendados(IDbConnection dbConnection)
+        public List<RecomendacionModel> GetLugaresRecomendados(IDbConnection dbConnection, string latitud, string longitud)
         {
+            dbConnection.Query<RecomendacionModel>("EXEC SP_GENERA_CERCANOS "+ latitud + ", "+ longitud);
             return (List<RecomendacionModel>)dbConnection.Query<RecomendacionModel>("SELECT * FROM [RECOMENDACIONES_CERCANAS]");
         }
 
