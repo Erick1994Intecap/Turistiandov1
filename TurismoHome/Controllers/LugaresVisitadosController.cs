@@ -28,6 +28,6 @@ namespace TurismoHome.Controllers
             return _service.GetLugaresVisitados(_dbConnection);
         }
 
-       
+
     }
 }
