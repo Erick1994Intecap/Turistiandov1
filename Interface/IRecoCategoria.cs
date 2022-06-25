@@ -5,10 +5,13 @@ using Turistiando.Model;
 
 namespace Interface
 {
-    public interface IRecoCategoria
+    public interface IRecomendacionCategoria
     {
+        
         RecoCategoriaModel GetLugaresCategoria();
+        
         List<RecoCategoriaModel> GetLugaresCategoria(System.Data.IDbConnection dbConnection, string categoria, string latitud, string longitud);
+        
         List<RecoCategoriaModel> GetLugarCategoria();
     }
 }

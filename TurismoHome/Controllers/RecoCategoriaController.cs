@@ -12,9 +12,9 @@ namespace TurismoHome.Controllers
     [ApiController]
     public class RecoCategoriaController : ControllerBase
     {
-        private readonly IRecoCategoria _service;
+        private readonly IRecomendacionCategoria _service;
         private readonly IDbConnection _dbConnection;
-        public RecoCategoriaController(IRecoCategoria categoria, IDbConnection dbConnection)
+        public RecoCategoriaController(IRecomendacionCategoria categoria, IDbConnection dbConnection)
         {
             this._service = categoria;
             this._dbConnection = dbConnection;
