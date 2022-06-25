@@ -28,7 +28,7 @@ namespace TurismoHome
             builder.RegisterInstance<IDbConnection>(conn);
             #endregion
             #region Recomendaciones por Categoria
-            builder.RegisterType<RecoCategoriaService>().As<IRecoCategoria>().SingleInstance();
+            builder.RegisterType<RecoCategoriaService>().As<IRecomendacionCategoria>().SingleInstance();
             conn = new SqlConnection();
             conn.ConnectionString = connectionString;
             conn.Open();

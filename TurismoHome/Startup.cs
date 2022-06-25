@@ -40,7 +40,7 @@ namespace TurismoHome
 
             services.AddSingleton<ILugaresVisitados, LugaresVisitadosService>();
             services.AddSingleton<ILugarTuristico, LugarTuristicoService>();
-            services.AddSingleton<IRecoCategoria, RecoCategoriaService>();
+            services.AddSingleton<IRecomendacionCategoria, RecoCategoriaService>();
             services.AddSingleton<IRecomendaciones, RecomendacionesService>();
             services.AddSingleton<IRecoRegiones, RecoRegionesService>();
 
