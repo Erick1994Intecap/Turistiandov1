@@ -9,7 +9,7 @@ using Turistiando.Model;
 namespace Servicios.Servicios
 {
 
-    public class RecoCategoriaService : IRecoCategoria
+    public class RecoCategoriaService : IRecomendacionCategoria
     {
         private readonly IDbConnection _dbConnection;
         public RecoCategoriaService(IDbConnection dbConnection)

@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Turistiando.Model
 {
+    //nos permite hacer referencia a la tabla
     public class RecoCategoriaModel
     {
         public string Lugar_Turistico { get; set; }
