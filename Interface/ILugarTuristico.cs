@@ -10,6 +10,6 @@ namespace Interface
         LugarTursiticoModel GetLugaresTuristico();
         List<LugarTursiticoModel> GetLugaresTuristicos(System.Data.IDbConnection dbConnection);
         List<LugarTursiticoModel> GetLugaresTuristicos();
-        void EditLugar(LugarTursiticoModel lugar);
+        List<LugarTursiticoModel> EditLugar(System.Data.IDbConnection dbConnection, int idLugar);
     }
 }

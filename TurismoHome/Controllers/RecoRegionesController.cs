@@ -19,13 +19,13 @@ namespace TurismoHome.Controllers
             this._service = lugar;
             this._dbConnection = dbConnection;
         }
-        // GET: api/<RecoRegionesController>
-        [HttpGet("{region}")]
-        public List<RecoRegionModel> Get(string region)
+
+        [HttpGet("lugarByRegionName")]
+        public List<RecoRegionModel> GetSiteRegion(string region)
         {
             return _service.GetRecomendacionesRegiones(_dbConnection, region);
         }
 
-       
+
     }
 }

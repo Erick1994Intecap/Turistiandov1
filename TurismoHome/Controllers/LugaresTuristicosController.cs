@@ -29,8 +29,9 @@ namespace TurismoHome.Controllers
        
         // PUT api/<LugaresTuristicosController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public List<LugarTursiticoModel> Put(int id)
         {
+            return _service.EditLugar(_dbConnection, id);
         }
 
     }
