@@ -19,15 +19,12 @@ namespace TurismoHome.Controllers
             this._service = lugar;
             this._dbConnection = dbConnection;
         }
-        // GET: api/<RecomendacionesController>
-        [HttpGet("{latitud}, {longitud}")]
-        public List<RecomendacionModel> Get(string latitud, string longitud)
+
+        [HttpGet("lugarByGPS")]
+        public List<RecomendacionModel> GetFilterGPS(string latitud, string longitud)
         {
             return _service.GetLugaresRecomendados(_dbConnection, latitud, longitud);
         }
 
-        // GET api/<RecomendacionesController>/5
-        
-        
     }
 }

@@ -15,9 +15,19 @@ namespace Servicios.Servicios
         {
             _dbConnection = dbConnection;
         }
-        public void EditLugar(LugarTursiticoModel lugar)
+        public List<LugarTursiticoModel> EditLugar(IDbConnection dbConnection, int idLugar)
         {
-            throw new NotImplementedException();
+            var lugarActual = dbConnection.Query<LugarTursiticoModel>("SELECT * FROM LUGAR_TURISTICO WHERE Id_lugar = " + idLugar);
+            
+
+            foreach (var item in lugarActual)
+            {
+                item.Visitas++;
+                
+                dbConnection.Query<LugarTursiticoModel>("UPDATE LUGAR_TURISTICO SET Visitas =" + item.Visitas + " WHERE Id_lugar = " + idLugar);
+            }
+
+            return (List<LugarTursiticoModel>)dbConnection.Query<LugarTursiticoModel>("SELECT * FROM LUGAR_TURISTICO WHERE Id_lugar = " + idLugar);
         }
 
         public List<LugarTursiticoModel> GetLugaresTuristicos(IDbConnection dbConnection)

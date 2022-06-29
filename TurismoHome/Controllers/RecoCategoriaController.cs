@@ -19,13 +19,13 @@ namespace TurismoHome.Controllers
             this._service = categoria;
             this._dbConnection = dbConnection;
         }
-        // GET: api/<RecoCategoriaController>
-        [HttpGet("{categoria}, {latitud}, {longitud}")]
-        public List<RecoCategoriaModel> Get(string categoria, string latitud, string longitud)
+
+        [HttpGet("filterCategoryGPS")]
+        public List<RecoCategoriaModel> GetFilter(string categoria, string latitud, string longitud)
         {
             return _service.GetLugaresCategoria(_dbConnection, categoria, latitud, longitud);
         }
 
-       
+
     }
 }
