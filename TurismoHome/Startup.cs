@@ -32,7 +32,7 @@ namespace TurismoHome
         {
             SqlConnection conn = new SqlConnection
             {
-                ConnectionString = @"Server=35.193.52.85,1433;Database=Elatracador;User ID=sqlserver;Password=R3st@I12022*;"
+                ConnectionString = @"Server=35.193.52.85;Database=Turistiando;user=sqlserver;password=R3st@I12022*;"
             };
             conn.Open();
             //builder.RegisterInstance<IDbConnection>(conn);
